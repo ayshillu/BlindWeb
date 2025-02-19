@@ -1,0 +1,87 @@
+{% include 'caretakerheader.html' %}
+
+<!-- Manage Blind Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Manage Blind</h2>
+
+    <!-- Form for Managing Blind -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="border p-4 shadow-sm rounded bg-light">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" pattern="[A-Za-z]{0,20}" placeholder="Enter First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" pattern="[A-Za-z]{0,20}" placeholder="Enter Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="imei">IMEI</label>
+                    <input type="number" class="form-control" id="imei" name="imei" pattern="[0-9]" placeholder="Enter IMEI Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="blind" name="type" value="b" checked>
+                            <label class="form-check-label" for="blind">Blind</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="cb" name="type" value="cb">
+                            <label class="form-check-label" for="cb">Colour Blindness</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" name="register" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Blind Section -->
+    <h2 class="text-center mt-5 mb-4">View Blind</h2>
+
+    <!-- Table for Blind List -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="width: 25%;">Name</th>
+                    <th style="width: 20%;">Phone</th>
+                    <th style="width: 15%;">Delete</th>
+                    <th style="width: 20%;">Send Track Request to Admin</th>
+                    <th style="width: 20%;">Track</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data['blind'] %}
+                <tr>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['phone'] }}</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="?action=delete&id={{ row['blind_id'] }}">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="?action=trackrequest&id={{ row['blind_id'] }}">Send Request</a>
+                    </td>
+                    {% if row['latitude']=="0"  and row['longitude']=="0"%}
+                    <td>Not Logged in Yet</td>
+                    {% else %}
+                    <td>
+                        <a class="btn btn-success btn-sm" href="https://maps.google.com?q={{row['latitude']}},{{row['longitude']}}" target="_blank">Track</a>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% include 'footer.html' %}

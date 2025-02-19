@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Thumbnails and temp files
+Thumbs.db
+
+# Node modules and dependencies (if applicable)
+node_modules/
+
+# Other system files
+.DS_Store

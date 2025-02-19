@@ -1,0 +1,84 @@
+{% include 'caretakerheader.html' %}
+
+<!-- Add Emergency Number Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Add Emergency Number</h2>
+
+    <!-- Form for Adding Emergency Number -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="border p-4 shadow-sm rounded bg-light" enctype="multipart/form-data"> 
+                <div class="form-group">
+                    <label for="bname">Blind Name</label>
+                    <select class="form-control" id="bname" name="bname" required>
+                        <option value="">Select</option>
+                        {% for row in data['viewblind'] %}
+                        <option value="{{row['blind_id']}}">{{row['Name']}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit Phone Number" required max="10">
+                </div>
+                <div class="form-group">
+                    <label for="name">Person Name</label>
+                    <input type="text" class="form-control" id="name" name="name" pattern="[A-Za-z]{0,20}" placeholder="Enter Person's Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="relation">Relation</label>
+                    <input type="text" class="form-control" id="relation" name="relation" pattern="[A-Za-z]{0,20}" placeholder="Enter Relation" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="relation" name="image1"  placeholder="Add Image" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="relation" name="image2" placeholder="Add Image" required>
+                </div>
+                <div class="form-group"></div>
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="relation" name="image3" placeholder="Add Image" required>
+                </div>
+               
+                <div class="text-center mt-4">
+                    <button type="submit" name="register" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Emergency Numbers Section -->
+    <h2 class="text-center mt-5 mb-4">View Emergency Numbers</h2>
+
+    <!-- Table for Emergency Numbers -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Phone</th>
+                    <th>Name</th>
+                    <th>Relation</th>
+                    <th>Delete</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data['blind'] %}
+                <tr>
+                    <td>{{ row['number'] }}</td>
+                    <td>{{ row['person_name'] }}</td>
+                    <td>{{ row['relation'] }}</td>
+                    <td><img src="/{{row['image']}}" width="300" height="300"></td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="?action=delete&id={{ row['emergency_id'] }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% include 'footer.html' %}

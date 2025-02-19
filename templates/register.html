@@ -1,0 +1,140 @@
+
+{% include 'publicheader.html' %}
+<style type="text/css">
+	/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+    background: #f7f7f7;
+    padding: 60px 0;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+}
+
+.hero-section p {
+    color: #666;
+}
+
+.rotate-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.rotate-sty-2 {
+    background: rgba(255, 255, 255, 0.6);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    border-radius: 50%;
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Login Section */
+.login-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.card h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.card .form-control {
+    border-radius: 5px;
+}
+
+.card .btn {
+    border-radius: 50px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+</style>
+<!-- Hero Section -->
+<section class="hero-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card p-5 shadow-lg">
+                    <h2 class="text-center mb-4">Register</h2>
+                    <form method='post'>
+                        <div class="form-group mb-3">
+                            <label for="username">First Name</label>
+                            <input type="text" id="username" name="fname" pattern="[A-Za-z]{0,20}" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password">Last Name</label>
+                            <input type="text" id="password" name="lname" pattern="[A-Za-z]{0,20}" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="username">Phone</label>
+                            <input type="text" id="username" name="phone"  pattern="[0-9]{10}" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="username">email</label>
+                            <input type="email" id="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="form-control" required>
+                        </div>
+                         <div class="form-group mb-3">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="username">Password</label>
+                            <input type="password" id="username" name="password" class="form-control" required>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary btn-lg" value="Submit" name="register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Login Section -->
+<section class="login-section py-5 bg-light">
+    <div class="container">
+        
+    </div>
+</section>
+
+<!-- Include Footer -->
+{% include 'footer.html' %}
+
+
+	

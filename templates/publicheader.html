@@ -1,0 +1,265 @@
+
+	{% with messages = get_flashed_messages() %}
+
+		{% if messages %}
+
+			<ul class=flashes>
+
+			{% for message in messages %}
+
+				<script type="text/javascript">alert("{{message}}")</script>
+
+			{% endfor %}
+
+			</ul>
+
+		{% endif %}
+
+	{% endwith %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CLEAR PATH</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/static/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="static/lib/lightbox/static/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="static/css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header position-relative overflow-hidden p-0">
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="/" class="navbar-brand p-0">
+                    <h1 class="display-6 text-primary m-0"><i class="fas fa-envelope me-3"></i>CLEAR PATH</h1>
+                    <!-- <img src="static/img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <!-- <a href="Login" class="nav-item nav-link">Login</a>
+                        <a href="register" class="nav-item nav-link">CareTaker Register</a> -->
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="feature.html" class="dropdown-item">Features</a>
+                                <a href="pricing.html" class="dropdown-item">Pricing</a>
+                                <a href="blog.html" class="dropdown-item">Blog</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div> -->
+<!--                         <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+ -->                    </div>
+                    <a href="login" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
+                    <a href="register" class="btn btn-primary rounded-pill text-white py-2 px-4">CareTaker Sign Up</a>
+                </div>
+            </nav>
+
+
+            <!-- Hero Header Start -->
+            <div class="hero-header overflow-hidden px-5">
+               
+            </div>
+            <!-- Hero Header End -->
+        </div>
+        <!-- Navbar & Hero End -->
+<!-- 
+<!DOCTYPE html> -->
+<!-- <html lang="zxx">
+
+<head>
+	<title>Blind is a software built to handle the primary housekeeping functions of a library. ...</title> -->
+	<!-- Meta Tags -->
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="A OCR System is a software built to help the blind people " /> -->
+	<!-- <script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script> -->
+	<!-- // Meta Tags -->
+	<!-- <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all"> -->
+	<!--testimonial flexslider-->
+<!-- 	<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+ -->	<!--fonts-->
+	<!-- <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet"> -->
+	<!--//fonts-->
+<!-- 
+</head>
+
+<body> -->
+	<!--Header-->
+	<!-- <div class="header">
+	<div class="top">
+					<div class="container">
+						
+							<div class="col-md-9 top-left">
+								<ul>
+									<li><i class="fa fa-map-marker" aria-hidden="true"></i> 1143 New York, USA</li>
+									<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+								</ul>
+							</div>
+							<div class="col-md-3 top-middle">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								</ul>
+							</div>
+							
+							<div class="clearfix"></div>
+						
+					</div>
+				</div>
+ -->		<!--top-bar-w3layouts-->
+		<!-- <div class="top-bar-w3layouts">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a href="index.html">OCR</a></h1>
+					</div> -->
+					<!-- navbar-header -->
+					<!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+						<ul class="nav navbar-nav navbar-right">
+						<li><a href="/" class="active">Home</a></li>
+						<li><a href='/login'>Login</a></li>
+						<li><a href='/register'>Register</a></li> --> 
+							<!-- <li><a href="gallery.html">Gallery</a></li> -->
+							
+						<!-- </ul>
+
+					</div>
+
+					<div class="search-bar-agileits">
+						<div class="cd-main-header">
+							<ul class="cd-header-buttons">
+								<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+							</ul> -->
+							<!-- cd-header-buttons -->
+					<!-- 	</div>
+						<div id="cd-search" class="cd-search">
+							<form action="#" method="post">
+								<input name="Search" type="search" placeholder="Click enter after typing...">
+							</form>
+						</div>
+					</div>
+
+
+					<div class="clearfix"> </div>
+				</nav>
+			</div>
+
+		</div> -->
+		<!--//top-bar-w3layouts-->
+		<!--Slider-->
+		<!-- <div class="banner">
+			
+		</div>
+		 -->
+		<!-- //Modal1 -->
+		<!--//Slider-->
+	<!-- </div> -->
+	<!--//Header-->
+	<!-- contact -->
+<!-- <section class="contact">
+	<div class="container">
+		<h3 class="title-txt"><span>C</span>ontact Us</h3>
+		<div class="contact-grids">
+			<div class=" col-md-5 contact-form">
+			<h4 class="heading">Get In Touch</h4>
+				<form action="#" method="post">
+						<input type="text" placeholder="Full Name" required=""/>
+						<input type="email" placeholder="Your Mail" required=""/>
+						<input type="text" placeholder="Mobile Number" required=""/>
+						<textarea placeholder="Message" required=""></textarea>
+						<div class="submit1">
+							<input type="submit" value="send">
+						</div>
+				</form>
+			</div>
+			<div class=" col-md-7 map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1518850482333"></iframe>
+				<div class="col-md-4 contact-grid1">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<div class="contact-right">
+						<p>Address</p>
+						<span>1234k Avenue, 4th block, <span>New York City.</span></span>
+					</div>
+				</div>
+				<div class="col-md-4 contact-grid1">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<div class="contact-right">
+						<p>Phone</p>
+						<span>+1(01) 24-212-5665</span>
+						<span>+1(01) 24-212-5666</span>
+					</div>
+				</div>
+				<div class="col-md-4 contact-grid1">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+					<div class="contact-right">
+						<p>Email</p>
+						<a href="mailto:info@example.com">info@example.com</a>
+						<a href="mailto:info@example1.com">info@example1.com</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</section>
+ --><!-- //contact 
+	<li><a href='/login'>Login</a></li>
+	<li><a href='/register'>Register</a></li>

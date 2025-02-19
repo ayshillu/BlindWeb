@@ -1,0 +1,54 @@
+{% include 'caretakerheader.html' %}
+
+<!-- Add Emergency Number Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Send Complaint</h2>
+
+    <!-- Form for Adding Emergency Number -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="border p-4 shadow-sm rounded bg-light">
+               
+                <div class="form-group">
+                    <label for="phone">Complaint</label>
+                    <textarea name="comp" required class="form-control"></textarea>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button type="submit" name="comp" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Emergency Numbers Section -->
+    <h2 class="text-center mt-5 mb-4">View Complaint</h2>
+
+    <!-- Table for Emergency Numbers -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Complaint</th>
+                    <th>Reply</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data['view'] %}
+                <tr>
+                    <td>{{ row['complaint'] }}</td>
+                    <td>{{ row['reply'] }}</td>
+                    <td>{{ row['date'] }}</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="?action=delete&id={{ row['complaint_id'] }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% include 'footer.html' %}

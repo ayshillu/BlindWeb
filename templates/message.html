@@ -1,0 +1,52 @@
+{% include 'caretakerheader.html' %}
+
+<!-- Message Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Messages</h2>
+
+    <form method="post">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Blind</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Reply</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data['viewcomplaints'] %}
+                    <tr>
+                        <!-- Display Blind Person's Name -->
+                        <td>{{row['first_name']}} {{row['last_name']}}</td>
+
+                        <!-- Display Request Message -->
+                        <td>{{row['request_message']}}</td>
+
+                        <!-- Display Date -->
+                        <td>{{row['date']}}</td>
+
+                        <!-- Display Reply Section -->
+                        {% if row['reply_message'] == "NA" %}
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="reply{{loop.index}}" placeholder="Write reply">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit" name="submit{{loop.index}}">Submit</button>
+                                </div>
+                            </div>
+                        </td>
+                        {% else %}
+                        <!-- If reply exists, display it -->
+                        <td>{{row['reply_message']}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+{% include 'footer.html' %}
